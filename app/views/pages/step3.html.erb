@@ -45,6 +45,6 @@
 
 <% else %>
 
-  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to complete</p>
+  <p>Please <%= link_to 'login', new_user_session_path, class: "link" %> or <%= link_to 'register', new_user_registration_path, class: "link" %> to complete this step.</p>
 
 <% end %>

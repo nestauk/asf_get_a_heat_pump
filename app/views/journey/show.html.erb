@@ -1,0 +1,40 @@
+<div class="max-w-prose mx-auto">
+  <h1 class="text-4xl font-bold mb-8">My heat pump journey</h1>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold">
+      1. What is a heat pump?
+    </h2>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold">
+      2. Why should I get a heat pump?
+    </h2>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-2">
+      <%= link_to '3. What type of heat pump is right for my home?', step3_path, class: 'link' %>
+    </h2>
+    <p>
+      Your recommended heat pump size is <strong><%= heat_pump_size(@step3_response) %></strong>. More summary info about potentially suitable heat pumps for the user...
+    </p>
+  </section>
+
+   <section class="mb-8">
+    <h2 class="text-2xl font-bold">
+      4. How much does a heat pump cost and can I get a grant?
+    </h2>
+  </section>
+</div>
+
+<aside>
+  About you
+
+  <p><strong>Type of home</strong></p>
+  <p><%= get_multiple_choice_value(@step3_response, "1. What type of home do you have?") %></p>
+
+  <p><strong># of bedrooms</strong></p>
+  <p><%= get_multiple_choice_value(@step3_response, "2. How many bedrooms does your home have?") %></p>
+</aside>

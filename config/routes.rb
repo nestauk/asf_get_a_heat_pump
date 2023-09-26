@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
-  get '/step-1', to: 'pages#step_1', as: 'step_1'
+  get '/my-journey', to: 'journey#show', as: 'journey'
+
+  get '/step-3', to: 'pages#step3', as: 'step3'
 
   post "/webhooks/new-response", to: "webhooks#new_response", as: "webhooks_new_response"
   get  "/webhooks/redirect/:token", to: "webhooks#redirect"
