@@ -1,4 +1,4 @@
-<h1 class="text-4xl font-bold mb-3">What type of heat pump is right for my home?</h1>
+<h1 class="text-4xl font-bold mb-3">3. What type of heat pump is right for my home?</h1>
 
 <% if user_signed_in? %>
 
@@ -7,8 +7,6 @@
 
   <p class="font-bold my-2">Recommended heat pump size:</p>
   <p class="text-xl font-bold"><%= heat_pump_size(@response) %></p>
-
-  <p class="mt-6 italic text-gray-600">Q for team: Should users be able to edit their responses?</p>
 
 <% else %>
   <div class="max-w-prose my-5">
@@ -45,6 +43,15 @@
 
 <% else %>
 
-  <p>Please <%= link_to 'login', new_user_session_path, class: "link" %> or <%= link_to 'register', new_user_registration_path, class: "link" %> to complete this step.</p>
+  <p class="mb-4">Different types of heat pumps warm your home using heat from different sources, such as the air or ground. For the majority of homes in the UK, air-to-water heat pumps (often simply called air-source heat pumps) may be the best option.</p>
+
+  <p class="mb-4">You can use the quiz below to find out which heat pump is suitable for your home, and how much it might cost to install. </p></p>
+
+  <p class="p-4 bg-yellow-100">Please <%= link_to 'login', new_user_session_path, class: "link" %> or <%= link_to 'register', new_user_registration_path, class: "link" %> to complete this step.</p>
 
 <% end %>
+
+<div class="flex justify-between mt-12">
+  <%= link_to "← 2. Why should I get a heat pump?", step2_path, class: "link" %>
+  <%= link_to "4. Costs, grants and funding →", step4_path, class: "link" %>
+</div>
