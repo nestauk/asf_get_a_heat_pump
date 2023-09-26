@@ -12,17 +12,20 @@
   </head>
 
   <body>
-    <nav>
-      <%- if user_signed_in? %>
-        &middot;
-        <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'link' %>
-        (Logged in as <%= current_user.email%>)
-      <% else %>
-        &middot;
-        <%= link_to 'Sign in', new_user_session_path, class: 'link' %>
-      <% end %>
+    <nav class="container mx-auto px-5 my-5 flex justify-between">
+      <%= link_to 'Home', root_path %>
+      <div>
+        <%- if user_signed_in? %>
+          My journey
+          &middot;
+          (Logged in as <%= current_user.email%>)
+          <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'link' %>
+        <% else %>
+          &middot;
+          <%= link_to 'Sign in', new_user_session_path, class: 'link' %>
+        <% end %>
+      </div>
     </nav>
-
 
     <main class="container mx-auto mt-28 px-5">
       <p class="notice"><%= notice %></p>
