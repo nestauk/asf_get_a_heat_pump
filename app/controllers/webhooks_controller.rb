@@ -14,9 +14,9 @@ class WebhooksController < ApplicationController
       fields: data["data"]["fields"],
       user: User.find_by(email: respondent_email)
     )
-  end
 
-  def redirect
-    redirect_to root_path(token: params[:token])
+    ActionCable.server.broadcast("webhooks", { status: "completed" })
+
+    head :ok
   end
 end

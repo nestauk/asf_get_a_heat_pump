@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   get '/step-4', to: 'pages#step4', as: 'step4'
 
   post "/webhooks/new-response", to: "webhooks#new_response", as: "webhooks_new_response"
-  get  "/webhooks/redirect/:token", to: "webhooks#redirect"
 end
